@@ -36,7 +36,7 @@ function Navbar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' , backgroundColor: darkTheme.palette.mode === 'dark' ? '#333' : '#fff',}}>
-      <Typography variant="h6" sx={{ m: 20 }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
         Ganesh's Portfolio
       </Typography>
       <Divider />
