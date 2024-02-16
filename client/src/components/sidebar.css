@@ -1,151 +1,40 @@
-@import url('https://fonts.googleapis.com/css?family=Aclonica&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:400&display=swap');
 .sidebar {
-  height: 90vh;
-  width: 100%;
-  background-color: #19191a;
-  overflow-y: scroll;
-  text-align: center;
-  padding-top: 40px;
-  
-}
-.sidebar > h1 {
-  padding-top: 20px;
-  text-align: center;
-}
-.topHashtag {
-  color: #000;
-  font-weight: bold;
+  /* Style for the sidebar container */
+  margin: 0% 0% 0% 8% ;
 }
 
-.h1_links {
-  text-decoration: none;
-  font-family: 'Aclonica', sans-serif;
-  color: white;
-  font-size: 32px;
-}
-.h1_links:hover {
-  color: #0cb357;
+.sidebar ul {
+  list-style: none; /* Remove the bullets from list items */
+  padding: 0;
 }
 
-.my-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-top: 10px;
-}
-.sidebar > p {
-  margin-top: 20px;
-  text-align: center;
+.sidebar-link {
+  text-decoration: none; /* Remove the underline from links */
 }
 
-.sidebar-nav {
-  margin-left: -30px;
-  margin-top: 30px;
-  text-align: center;
-}
-.sidebar-nav-items {
-  margin-bottom: 15px;
-}
-ul {
-  list-style: none;
+.sidebar-link Button {
+   /* Initial text color */
+  background-color: transparent; /* Initial background color */
+  border: none; /* Remove button border */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transition for text color and background color */
+  padding: 10px; /* Add padding for better visual */
+  position: relative; /* Position relative for pseudo-element */
+  overflow: hidden; /* Hide overflow to prevent gradient overflow */
 }
 
-.links {
-  background-image: linear-gradient(to right, #3f6823, #3f6823, #3f6823);
-  background-size: 200% 100%;
-  background-position: -100%;
-  display: inline-block;
-  padding: 5px 0;
-  position: relative;
-  text-decoration: none;
-  font-family: 'Comfortaa', cursive;
-  font-size: larger;
-  line-height: 1.4rem;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-in-out;
-  
-}
-
-.links:before {
+.sidebar-link Button::before {
   content: '';
-  background: linear-gradient(
-    to right,
-    rgba(255, 0, 0, 1),
-    rgba(255, 0, 180, 1),
-    rgba(0, 100, 200, 1)
-  );
-  display: block;
   position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  transition: all 0.3s ease-in-out;
+  top: 0;
+  left: 0; /* Start the gradient from the left side */
+  width: 0; /* Initially set the width to 0 */
+  height: 100%;
+  background: linear-gradient(to right, transparent, green); /* Linear gradient from transparent to green */
+  transition: width 0.5s ease; /* Transition for width */
 }
-
-.links:hover {
-  background-position: 0;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 0, 0, 1),
-    rgba(255, 0, 180, 1),
-    rgba(0, 100, 200, 1)
-  );
+.sidebar-link Button:hover::before {
+  width: 120%; /* Fill the gradient to 100% width on hover */
 }
-
-.links:hover::before {
-  width: 100%;
-}
-
-.icon-img {
-  height: 28px;
-  margin-bottom: 15px;
-}
-.icon-img:hover {
-  scale: 1.2;
-  cursor: pointer;
-}
-.heart {
-  color: red;
-}
-
-/*//////////////media ////////////////////*/
-@media (max-width: 980px) {
-  .sidebar {
-    width: 106vw;
-  }
-  .h1_links {
-    font-size: 29px;
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    width: 106vw;
-  }
-  .h1_links {
-    font-size: 28px;
-  }
-  .links {
-    display: none;
-  }
-
-  .gmail {
-    font-size: 16px;
-    font-weight: normal;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    width: 106vw;
-  }
-  .h1_links {
-    font-size: 24px;
-  }
-  .links {
-    font-size: 16px;
-  }
+.sidebar-link Button:hover {
+  color: white; /* Change text color on hover */
 }

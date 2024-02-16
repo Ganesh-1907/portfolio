@@ -17,14 +17,13 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { createTheme } from '@mui/system';
 const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-    },
-  });
-  
+  palette: {
+    mode: "dark",
+  },
+});
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Work' ,'Portfolio' ,'Contact'];
+const navItems = ['Home', 'About', 'Work', 'Portfolio', 'Contact'];
 
 function Navbar(props) {
   const { window } = props;
@@ -35,10 +34,10 @@ function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' , backgroundColor: darkTheme.palette.mode === 'dark' ? '#333' : '#fff',}}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor: darkTheme.palette.mode === 'dark' ? '#333' : '#fff', }}>
+      {/* <Typography variant="h6" sx={{ my: 2 }}>
         Ganesh's Portfolio
-      </Typography>
+      </Typography> */}
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -62,32 +61,29 @@ function Navbar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1,color:"orange",fontFamily:'Aclonica',fontSize:"30px", minWidth: '180px' }} // Set minimum width for the name
           >
-            Ganesh's Portfolio
+            Ganesh Bora
           </Typography>
+          <Box sx={{ display: { xs: 'none', sm: 'block' }, minWidth: '200px' ,minHeight:"80px" }}> 
+              <Button sx={{ fontSize: "23px" ,color: 'orange',marginLeft:"0px", minWidth: '100px' , minHeight:"70px" }}>Resume</Button>    
+          </Box>
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            edge="end" // Set edge to "end" for right alignment
+            edge="end"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ ml: 'auto', display: { xs: 'block', sm: 'none' }, minWidth: '48px' }} // Set minimum width for the menu icon
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
         </Toolbar>
       </AppBar>
       <nav>
         <Drawer
           container={container}
           variant="temporary"
+          anchor="right"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
@@ -101,11 +97,8 @@ function Navbar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        <Typography>
-          {/* Your main content goes here */}
-        </Typography>
+      <Box component="main" sx={{ p: 3, width: '100%' }}>
+        {/* Your main content goes here */}
       </Box>
     </Box>
   );
