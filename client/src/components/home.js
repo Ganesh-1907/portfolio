@@ -10,6 +10,7 @@ import '../components/home.css';
 import { Button } from "@mui/base";
 import Crousel from "./crousel";
 import Skills from "../components/skills.js"
+import Experience from "./experience";
 const Home = () => {
   return (
     <>
@@ -23,6 +24,8 @@ const Home = () => {
             <Crousel />
             <hr/>
             <About />
+            <hr/>
+            <Experience/>
             <hr/>
             <Skills/>
             <hr/>

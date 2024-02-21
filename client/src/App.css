@@ -135,10 +135,15 @@ body {
   background: transparent;
   height: 15rem;
   color: grey;
-  border: 2px inset #000;
+  border: 2px inset #474545;
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden; /* Hide overflow to prevent border from being visible outside the card */
+  transition: border-style 0.3s; /* Smooth transition for border style change */
+}
+
+.about-card:hover {
+  border-style: outset; /* Change border style to outset on hover */
 }
 
 .about-card::before {
@@ -150,7 +155,7 @@ body {
   bottom: -2px;
   border-radius: 5px; /* Adjust border radius as needed */
   z-index: -1; /* Push the pseudo-element behind the card content */
-  background: linear-gradient(to top left, transparent, rgb(22, 49, 22), transparent); /* Gradient for the border */
+  background: linear-gradient(to top left, transparent, rgb(51, 105, 51), transparent); /* Gradient for the border */
   transition: opacity 0.5s; /* Smooth transition for opacity */
   opacity: 0; /* Initially hide the border */
 }
